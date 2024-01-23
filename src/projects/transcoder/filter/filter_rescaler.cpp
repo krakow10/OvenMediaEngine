@@ -176,7 +176,7 @@ bool FilterRescaler::InitializeFilterDescription()
 		{
 			case cmn::MediaCodecModuleId::NVENC: { 	// Zero Copy
 				//TODO: Exception handling required if Device ID is different. Find out if memory copy between GPUs is possible
-				desc = ov::String::FormatString("");
+				desc = ov::String::FormatString("hwupload_cuda=device=%d,", output_device_id);
 			}
 			break;
 			case cmn::MediaCodecModuleId::XMA: {
